@@ -1,0 +1,21 @@
+SELECT
+	INC.[Call Received Date / Time Date] AS 'Call Received',
+	INC.[Event Number (E#########)] AS 'Event Number',
+	BLOOD.[Blood Product:],
+	BLOOD.[Administered Product Blood Type > Blood Type:] AS 'Type',
+	BLOOD.[Administered Product Blood Type > RH:] AS 'Type_RH',
+	blood.[Match:],
+	blood.[Unit ID:],
+	BLOOD.[Done by]
+
+FROM
+	DDMCV.[Incident > Incident > General] AS INC
+	LEFT OUTER JOIN DDMCV.[Assess/Tx > Procedures > Blood Administration] AS BLOOD
+	ON INC.[Patient ID] = BLOOD.[Patient ID]
+
+WHERE
+	BLOOD.[Blood Product:] IS NOT NULL
+
+AND INC.[Call Received Date / Time Date] BETWEEN '2023-03-01' AND '2023-03-09'
+
+ORDER BY 'Call Received' ASC
