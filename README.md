@@ -1,5 +1,5 @@
-# Please start here
+# BCEHS Clinical Hub Data Governance 
 
-Welcome, and thanks for choosing our product.
+All Clinical Hub data sets and dashboard SQL queries will be available here for referene. 
 
 If you want to dive right in, try our [quick start tutorial](./). 
